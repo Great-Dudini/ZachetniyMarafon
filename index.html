@@ -157,7 +157,9 @@
 
         function callMethodJoinGroup() // вызываем метод ВК для подписки на сообщество
         {
-            vkBridge.send('VKWebAppJoinGroup', { group_id: 150547691 }) // ID вашего сообщества
+            vkBridge.send('VKWebAppJoinGroup', {
+                group_id: 166562603
+            }) // ID вашего сообщества
                 .then((data) => {
                     if (data.result) {
                         console.log("ok"); // Подписка успешна
