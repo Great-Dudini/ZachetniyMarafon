@@ -125,7 +125,7 @@
 
     </script>
     <script>
-    // Пользовательский код
+        // Пользовательский код
 
         function FromUnityToJs()   // функция вызывается из Unity
         {
@@ -149,6 +149,26 @@
                 });
 
         }
+        // Новая функция для подписки на сообщество
+        /*function FromUnityToJsJoinGroup()   // вызывается из Unity
+        {
+            callMethodJoinGroup();
+        }
+
+        function callMethodJoinGroup() // вызываем метод ВК для подписки на сообщество
+        {
+            vkBridge.send('VKWebAppJoinGroup', { group_id: 150547691 }) // ID вашего сообщества
+                .then((data) => {
+                    if (data.result) {
+                        console.log("ok"); // Подписка успешна
+                        myGameInstance.SendMessage('ConnectJs', 'JoinGroupOk');
+                    }
+                })
+                .catch((error) => {
+                    console.log(error); // Ошибка
+                    myGameInstance.SendMessage('ConnectJs', 'JoinGroupError');
+                });
+        }*/
 
         jQuery(document).ready(function ($) // страница прогружена
         {
