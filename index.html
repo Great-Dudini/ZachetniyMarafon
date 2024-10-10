@@ -180,7 +180,7 @@
         {
             // Открываем пост на стене через VK Bridge
             vkBridge.send('VKWebAppOpenWallPost', {
-                owner_id: ownerId,  // ID владельца поста (например, группы или пользователя)
+                owner_id: -ownerId,  // ID владельца поста (например, группы или пользователя)
                 post_id: postId     // ID поста
             })
                 .then((data) => {
