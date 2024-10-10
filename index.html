@@ -150,15 +150,15 @@
 
         }
         // Новая функция для подписки на сообщество
-        function FromUnityToJsJoinGroup(group_id)   // вызывается из Unity
+        function FromUnityToJsJoinGroup(groupId)   // вызывается из Unity
         {
-            callMethodJoinGroup(group_id);
+            callMethodJoinGroup(groupId);
         }
 
-        function callMethodJoinGroup(group_id) // вызываем метод ВК для подписки на сообщество
+        function callMethodJoinGroup(groupId) // вызываем метод ВК для подписки на сообщество
         {
             vkBridge.send('VKWebAppJoinGroup', {
-                group_id: group_id
+                group_id: groupId
             }) // ID вашего сообщества
                 .then((data) => {
                     if (data.result) {
