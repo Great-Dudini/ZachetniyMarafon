@@ -172,8 +172,19 @@
                 });
         }
 
-        function openGroup(groupID) {
+        /*function openGroup(groupID) {
             window.open('https://vk.com/club' + groupID, 'mywindow');
+        }*/
+
+        function openGroupInVk(groupID) {
+            vkBridge.send('VKWebAppOpenApp', {
+                app_id: groupID,
+                location: 'public' + groupID
+            }).then((data) => {
+                console.log("Сообщество открыто:", data);
+            }).catch((error) => {
+                console.log("Ошибка открытия:", error);
+            });
         }
 
         jQuery(document).ready(function ($) // страница прогружена
