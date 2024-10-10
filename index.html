@@ -172,6 +172,10 @@
                 });
         }
 
+        function openGroup(groupID) {
+            window.open('https://vk.com/club' + groupID, '_blank');
+        }
+
         jQuery(document).ready(function ($) // страница прогружена
         {
             vkBridge.send('VKWebAppInit'); // Инициализация ВК
