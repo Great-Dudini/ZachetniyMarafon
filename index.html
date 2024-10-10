@@ -172,7 +172,8 @@
                 });
         }
 
-        function openWallPost(ownerId, postId) {
+        function openWallPost(ownerId, postId)
+        {
             // Открываем пост на стене через VK Bridge
             vkBridge.send('VKWebAppOpenWallPost', {
                 owner_id: ownerId,  // ID владельца поста (например, группы или пользователя)
@@ -181,11 +182,13 @@
                 .then((data) => {
                     if (data.result) {
                         console.log("Пост открыт для просмотра: ", data);
+                        myGameInstance.SendMessage('ConnectJs', 'JoinGroupOk');
                     }
 
                 })
                 .catch((error) => {
                     console.log("Ошибка при открытии поста: ", error);
+                    myGameInstance.SendMessage('ConnectJs', 'JoinGroupError');
                 });
         }
 
