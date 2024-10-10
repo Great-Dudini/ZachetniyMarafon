@@ -179,7 +179,9 @@
                 post_id: postId     // ID поста
             })
                 .then((data) => {
-                    console.log("Пост открыт для просмотра: ", data);
+                    if (data.result) {
+                        console.log("Пост открыт для просмотра: ", data);
+                    }
                 })
                 .catch((error) => {
                     console.log("Ошибка при открытии поста: ", error);
