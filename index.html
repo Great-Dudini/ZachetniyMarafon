@@ -172,19 +172,18 @@
                 });
         }
 
-        /*function openGroup(groupID) {
-            window.open('https://vk.com/club' + groupID, 'mywindow');
-        }*/
-
-        function openGroupInVk(groupID) {
-            vkBridge.send('VKWebAppOpenApp', {
-                app_id: groupID,
-                location: 'public' + groupID
-            }).then((data) => {
-                console.log("Сообщество открыто:", data);
-            }).catch((error) => {
-                console.log("Ошибка открытия:", error);
-            });
+        function openWallPost(ownerId, postId) {
+            // Открываем пост на стене через VK Bridge
+            vkBridge.send('VKWebAppOpenWallPost', {
+                owner_id: ownerId,  // ID владельца поста (например, группы или пользователя)
+                post_id: postId     // ID поста
+            })
+                .then((data) => {
+                    console.log("Пост открыт для просмотра: ", data);
+                })
+                .catch((error) => {
+                    console.log("Ошибка при открытии поста: ", error);
+                });
         }
 
         jQuery(document).ready(function ($) // страница прогружена
