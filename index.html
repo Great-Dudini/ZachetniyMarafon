@@ -171,6 +171,10 @@
                     myGameInstance.SendMessage('ConnectJs', 'JoinGroupError');
                 });
         }
+        function FromUnityToJsOpenWallPost(ownerId, postId)   // вызывается из Unity
+        {
+            openWallPost(ownerId, postId);
+        }
 
         function openWallPost(ownerId, postId)
         {
