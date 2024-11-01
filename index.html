@@ -14,6 +14,17 @@
     <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
 
     <style>
+        /* Стили для вертикальной ориентации (портретного режима) */
+        @media screen and (orientation: portrait) {
+            /* Здесь можно задать стили для вертикального режима */
+            #unityContainer {
+                width: 100vw;
+                height: 100vh;
+                transform: none; /* Убираем все повороты */
+            }
+        }
+
+        /* Стили для горизонтальной ориентации (альбомного режима) */
         @media screen and (orientation: landscape) {
             body {
                 transform: rotate(-90deg);
