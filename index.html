@@ -13,6 +13,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
 
+    <style>
+        @media screen and (orientation: landscape) {
+            body {
+                transform: rotate(-90deg);
+                transform-origin: center center;
+                width: 100vh;
+                height: 100vw;
+                overflow: hidden;
+            }
+
+            #unityContainer {
+                width: 100vw;
+                height: 100vh;
+            }
+        }
+    </style>
+
 </head>
 <body>
     <div id="unity-container" class="unity-desktop">
