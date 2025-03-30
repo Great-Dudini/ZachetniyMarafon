@@ -198,6 +198,27 @@
                 });
         }
 
+        vkBridge.subscribe((e) => {
+            const { type } = e.detail;
+            switch (type) {
+                case 'VKWebAppViewHide':
+                    myGameInstance.SendMessage('ConnectJs', 'PauseAudio');
+                    break;
+                case 'VKWebAppViewRestore':
+                    myGameInstance.SendMessage('ConnectJs', 'ResumeAudio');
+                    break;
+            }
+        });
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                myGameInstance.SendMessage('ConnectJs', 'PauseAudio');
+            } else {
+                myGameInstance.SendMessage('ConnectJs', 'ResumeAudio');
+            }
+        });
+
+
         jQuery(document).ready(function ($) // страница прогружена
         {
             vkBridge.send('VKWebAppInit'); // Инициализация ВК
